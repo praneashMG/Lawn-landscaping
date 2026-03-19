@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- Brand Colors --- */
+        :root, html[data-theme='light'] {
+            --color-background: #FFFFFF;
+            --color-surface: #F1F8F1;
+            --color-primary-text: #1B261B;
+            --color-secondary-text: #4E342E;
+            --color-accent: #2E7D32;
+            --color-border: #E5E7EB;
+            --color-input-bg: #FFFFFF;
+        }
+        html[data-theme='dark'] {
+            --color-background: #000000;
+            --color-surface: #1A261A;
+            --color-primary-text: #FFFFFF;
+            --color-secondary-text: #D7CCC8;
+            --color-accent: #81C784; 
+            --color-border: #243624;
+            --color-input-bg: #0D140D;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+
+        .auth-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-field {
+            background-color: var(--color-input-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary-text);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2E7D32 0%, #4E342E 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Floating Controls */
+        .controls {
+            position: fixed; top: 1.5rem; right: 1.5rem;
+            display: flex; gap: 0.75rem; z-index: 50;
+        }
+        html[dir="rtl"] .controls { right: auto; left: 1.5rem; }
+        .btn-control {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--color-background); border: 1px solid var(--color-border);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: var(--color-primary-text);
+            transition: all 0.2s ease;
+        }
+        .btn-control:hover { background-color: var(--color-accent); color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="toggleRTL()" class="btn-control" title="Toggle RTL">
+            <i class="fas fa-globe"></i>
+        </button>
+        <button onclick="toggleTheme()" class="btn-control" title="Toggle Dark Mode">
+            <i class="fas fa-moon dark-icon"></i>
+            <i class="fas fa-sun light-icon hidden"></i>
+        </button>
+    </div>
+
+    <div class="relative w-full max-w-5xl">
+        <div class="auth-card w-full flex flex-col md:flex-row rounded-[2rem] min-h-[540px] overflow-hidden">
+            
+            <!-- Left Panel: Brand & Image -->
+            <div class="hidden md:flex md:w-1/2 relative bg-emerald-950">
+                <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1000&auto=format&fit=crop" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <div class="relative z-10 p-8 text-white flex flex-col justify-between h-full">
+                    <div>
+                        <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight mb-4 block">
+                            <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                        </a>
+                        <h2 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-3">Grow Your <br><span class="text-[#81C784]">Dream Landscape</span></h2>
+                        <p class="text-white/80 text-lg font-light leading-relaxed">Join Royal Garden and get a customized maintenance plan for your property.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
+                        <p class="text-xs font-bold uppercase tracking-widest text-[#81C784] mb-2">Member Benefit</p>
+                        <p class="text-sm leading-relaxed text-white/90 font-medium">Enjoy 20% off your first seasonal cleanup when you sign up today.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Form -->
+            <div class="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8 lg:p-10">
+                <div class="w-full max-w-sm">
+                    
+                    <a href="index.html" class="md:hidden text-3xl font-serif font-extrabold tracking-tight mb-5 text-center block">
+                        <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                    </a>
+
+                    <div class="mb-3 text-center md:text-left">
+                        <h3 class="text-2xl lg:text-3xl font-serif font-bold mb-1 text-primary-text">Create Account</h3>
+                        <p class="text-secondary-text opacity-70">Start your premium lawn care journey.</p>
+                    </div>
+
+                    <div class="flex justify-center md:justify-start gap-3 mb-3">
+                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-google text-red-500"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-apple text-primary-text"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-facebook-f text-blue-600"></i>
+                        </button>
+                    </div>
+
+                    <div class="relative flex items-center gap-4 mb-3">
+                        <div class="flex-1 h-px bg-border"></div>
+                        <span class="text-[10px] font-bold uppercase text-secondary-text tracking-widest">OR EMAIL</span>
+                        <div class="flex-1 h-px bg-border"></div>
+                    </div>
+
+                    <form action="#" class="space-y-2">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">First Name</label>
+                                <input type="text" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Last Name</label>
+                                <input type="text" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Email Address</label>
+                            <input type="email" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="name@example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Password</label>
+                            <input type="password" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="••••••••">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Confirm Password</label>
+                            <input type="password" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="••••••••">
+                        </div>
+
+                     <div class="flex items-center gap-2 py-0.5">
+    
+    <input 
+        type="checkbox" 
+        required 
+        id="terms" 
+        class="w-4 h-4 rounded accent-[#2E7D32] shrink-0"
+    >
+
+    <label 
+        for="terms" 
+        class="text-[10px] leading-tight uppercase font-bold opacity-60 cursor-pointer"
+    >
+        I agree to the 
+        <a href="#" class="text-accent hover:underline">Terms of Service</a> 
+        and 
+        <a href="#" class="text-accent hover:underline">Privacy Policy</a>
+    </label>
+
+</div>
+                        <button type="submit" class="btn-primary w-full py-2.5 rounded-xl text-white font-bold text-base shadow-lg mt-0.5">
+                            Join Royal Garden
+                        </button>
+                    </form>
+
+                    <p class="text-sm mt-3 text-center md:text-left text-secondary-text">
+                        Already have an account? <a href="login.html" class="text-accent font-bold hover:underline">Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const target = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', target);
+            localStorage.setItem('theme', target);
+            updateIcons();
+        }
+
+        function toggleRTL() {
+            const html = document.documentElement;
+            const current = html.getAttribute('dir');
+            const target = current === 'ltr' ? 'rtl' : 'ltr';
+            html.setAttribute('dir', target);
+            localStorage.setItem('dir', target);
+        }
+
+        function updateIcons() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            document.querySelectorAll('.light-icon').forEach(el => el.classList.toggle('hidden', theme !== 'dark'));
+            document.querySelectorAll('.dark-icon').forEach(el => el.classList.toggle('hidden', theme !== 'light'));
+        }
+
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+        document.documentElement.setAttribute('dir', localStorage.getItem('dir') || 'ltr');
+        updateIcons();
+    </script>
+</body>
+</html>

@@ -307,7 +307,7 @@
                     <div class="w-10 h-10 rounded-xl bg-[#2E7D32]/10 flex items-center justify-center text-accent mb-4"><i class="fas fa-cut"></i></div>
                     <h3 class="text-xl font-bold text-primary-text mb-2">Lawn Mowing</h3>
                     <p class="text-secondary-text text-sm mb-4 opacity-70">Precision cutting and edging for a carpet-like finish every single time.</p>
-                    <a href="#" class="mt-auto text-accent font-bold text-sm flex items-center gap-2 group-hover:underline">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+                        <a href="servicedetails.html?service=lawn-mowing" class="mt-auto text-accent dark:text-[#81C784] text-sm font-bold flex items-center hover:underline">Learn More <i class="fas fa-chevron-right ml-2 text-[10px]"></i></a>
                 </div>
             </div>
             <!-- Card 2 -->
@@ -320,7 +320,7 @@
                     <div class="w-10 h-10 rounded-xl bg-[#2E7D32]/10 flex items-center justify-center text-accent mb-4"><i class="fas fa-pencil-ruler"></i></div>
                     <h3 class="text-xl font-bold text-primary-text mb-2">Landscape Design</h3>
                     <p class="text-secondary-text text-sm mb-4 opacity-70">Custom architectural planning to create your dream outdoor environment.</p>
-                    <a href="#" class="mt-auto text-accent font-bold text-sm flex items-center gap-2 group-hover:underline">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+                        <a href="servicedetails.html?service=landscape-design" class="mt-auto text-accent dark:text-[#81C784] text-sm font-bold flex items-center hover:underline">Learn More <i class="fas fa-chevron-right ml-2 text-[10px]"></i></a>
                 </div>
             </div>
             <!-- Card 3 -->
@@ -333,7 +333,7 @@
                     <div class="w-10 h-10 rounded-xl bg-[#2E7D32]/10 flex items-center justify-center text-accent mb-4"><i class="fas fa-tree"></i></div>
                     <h3 class="text-xl font-bold text-primary-text mb-2">Tree Trimming</h3>
                     <p class="text-secondary-text text-sm mb-4 opacity-70">Health-focused pruning and shaping to enhance safety and aesthetic appeal.</p>
-                    <a href="#" class="mt-auto text-accent font-bold text-sm flex items-center gap-2 group-hover:underline">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+                        <a href="servicedetails.html?service=tree-trimming" class="mt-auto text-accent dark:text-[#81C784] text-sm font-bold flex items-center hover:underline">Learn More <i class="fas fa-chevron-right ml-2 text-[10px]"></i></a>
                 </div>
             </div>
             <!-- Card 4 -->
@@ -346,7 +346,7 @@
                     <div class="w-10 h-10 rounded-xl bg-[#2E7D32]/10 flex items-center justify-center text-accent mb-4"><i class="fas fa-broom"></i></div>
                     <h3 class="text-xl font-bold text-primary-text mb-2">Seasonal Cleanup</h3>
                     <p class="text-secondary-text text-sm mb-4 opacity-70">Complete spring and fall debris removal to keep your garden healthy.</p>
-                    <a href="#" class="mt-auto text-accent font-bold text-sm flex items-center gap-2 group-hover:underline">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+                        <a href="servicedetails.html?service=seasonal-cleanup" class="mt-auto text-accent dark:text-[#81C784] text-sm font-bold flex items-center hover:underline">Learn More <i class="fas fa-chevron-right ml-2 text-[10px]"></i></a>
                 </div>
             </div>
         </div>
@@ -404,60 +404,144 @@
     </div>
 </section>
 
-<!-- 5️⃣ PRICING PACKAGES -->
-<section class="py-24 bg-background">
+<!-- 2️⃣ PRICING TOGGLE STRIP -->
+<section class="py-12 bg-background border-b border-border">
     <div class="container mx-auto max-w-7xl px-4">
-        <div class="text-center mb-16">
-            <span class="inline-block px-4 py-1 rounded-full bg-[#2E7D32]/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Transparent Pricing</span>
-            <h2 class="font-serif text-3xl md:text-5xl font-bold text-primary-text mb-4 dark:text-[#81C784]">Maintenance Packages</h2>
-            <p class="text-secondary-text opacity-70">Choose the perfect care plan for your lawn's health and beauty.</p>
+        <div class="flex flex-col items-center">
+            <div class="inline-flex p-1 bg-hover rounded-2xl border border-border shadow-inner" id="pricing-toggle">
+                <button id="btn-monthly" class="px-8 py-3 rounded-xl bg-[#2E7D32] text-white font-bold shadow-lg transition-all duration-300">
+                    Monthly
+                </button>
+                <button id="btn-seasonal" class="px-8 py-3 rounded-xl text-primary-text font-bold transition-all duration-300">
+                    Seasonal
+                </button>
+            </div>
+            <p class="mt-4 text-sm text-secondary-text opacity-70">Save 15% with seasonal packages</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3️⃣ MAIN PRICING CARDS -->
+<section class="py-20 bg-background relative overflow-hidden">
+    <div class="container mx-auto max-w-7xl px-4 relative">
+        <!-- MONTHLY PLANS -->
+        <div id="monthly-plans" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch transition-opacity duration-300 transform">
+            <!-- Basic Plan -->
+            <div class="group bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Basic Plan</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Essential maintenance for small yards.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black text-accent">$79</span>
+                        <span class="text-secondary-text ml-1">/mo</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Bi-weekly Mowing</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Edge Trimming</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Debris Blowing</li>
+                    <li class="flex items-center text-sm text-secondary-text opacity-40"><i class="fas fa-times mr-3"></i> Fertilization</li>
+                </ul>
+                <button class="w-full py-4 mt-auto rounded-xl border-2 border-accent text-accent font-bold hover:bg-accent hover:tedxt-white transition-all">Select Plan</button>
+            </div>
+
+            <!-- Standard Plan (Featured) -->
+            <div class="relative group bg-background p-10 rounded-2xl border-2 border-accent shadow-2xl z-10 flex flex-col h-full transform lg:scale-105">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Standard Plan</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Complete care for medium properties.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-5xl font-black text-accent">$129</span>
+                        <span class="text-secondary-text ml-1">/mo</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-check text-accent mr-3"></i> Weekly Mowing</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-check text-accent mr-3"></i> Premium Edging</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-check text-accent mr-3"></i> Seasonal Fertilization</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-check text-accent mr-3"></i> Weed Control</li>
+                </ul>
+                <button class="w-full py-4 mt-auto rounded-xl bg-gradient-to-br from-[#2E7D32] to-[#4E342E] text-white font-bold shadow-xl hover:brightness-110 active:scale-95 transition-all">Select Plan</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="group bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Premium Plan</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Luxury service for large estates.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black text-accent">$249</span>
+                        <span class="text-secondary-text ml-1">/mo</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Priority Weekly Mowing</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Hedge & Bush Trimming</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> Irrigation Monitoring</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-check text-accent mr-3"></i> 24/7 Priority Support</li>
+                </ul>
+                <button class="w-full py-4 mt-auto rounded-xl border-2 border-accent text-accent font-bold hover:bg-accent hover:text-whdite transition-all">Select Plan</button>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <!-- Basic -->
-            <div class="bg-background p-8 rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center">
-                <div class="w-14 h-14 rounded-2xl bg-[#2E7D32]/10 flex items-center justify-center mb-4 text-accent"><i class="fas fa-seedling text-2xl"></i></div>
-                <h3 class="text-xl font-bold text-accent-light mb-2">Basic</h3>
-                <div class="text-4xl font-black text-accent mb-1">$89<span class="text-base font-normal text-secondary-text opacity-50">/mo</span></div>
-                <p class="text-xs text-secondary-text opacity-40 mb-6">Billed monthly</p>
-                <ul class="space-y-3 mb-8 w-full text-secondary-text">
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Bi-weekly Mowing</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Edge Trimming</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Blowing Debris</li>
-                    <li class="flex items-center gap-3 text-sm opacity-30 line-through"><i class="fas fa-times text-xs flex-shrink-0"></i>Fertilization</li>
+        <!-- SEASONAL PLANS -->
+        <div id="seasonal-plans" class="hidden grid-cols-1 md:grid-cols-3 gap-8 items-stretch transition-opacity duration-300 transform">
+            <!-- Spring Plan -->
+            <div class="group bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Spring Blossom</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Prep and awakening for early growth.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black text-accent">$349</span>
+                        <span class="text-secondary-text ml-1">/season</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-leaf text-accent mr-3"></i> Overgrowth Clearing</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-leaf text-accent mr-3"></i> Soil Turning & Aeration</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-leaf text-accent mr-3"></i> Spring Reseeding</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-leaf text-accent mr-3"></i> Sprinkler Start-up</li>
                 </ul>
-                <button class="w-full py-3 px-6 rounded-xl border-2 border-[#2E7D32] text-accent font-bold hover:bg-[#2E7D32] hover:text-white transition-all">Get Started</button>
+                <button class="w-full py-4 mt-auto rounded-xl border-2 border-accent text-accent font-bold hover:bg-accent hover:text-whi
+                te transition-all">Select Plan</button>
             </div>
 
-            <!-- Standard -->
-            <div class="relative bg-custom-gradient p-10 rounded-3xl shadow-2xl transform md:scale-110 z-10 flex flex-col items-center">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-[#2E7D32] px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">Most Popular</div>
-                <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-4 text-white"><i class="fas fa-star text-2xl"></i></div>
-                <h3 class="text-2xl font-bold text-white mb-2">Standard</h3>
-                <div class="text-5xl font-black text-white mb-1">$149<span class="text-base font-normal text-white/60">/mo</span></div>
-                <p class="text-xs text-white/50 mb-6">Billed monthly</p>
-                <ul class="space-y-3 mb-8 w-full text-white/90">
-                    <li class="flex items-center gap-3 text-sm font-semibold"><i class="fas fa-check text-white/70 text-xs flex-shrink-0"></i>Weekly Mowing</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-white/70 text-xs flex-shrink-0"></i>Premium Edging</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-white/70 text-xs flex-shrink-0"></i>Blowing & Cleanup</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-white/70 text-xs flex-shrink-0"></i>Seasonal Fertilization</li>
+            <!-- Summer Plan (Featured) -->
+            <div class="relative group bg-background p-10 rounded-2xl border-2 border-accent shadow-2xl z-10 flex flex-col h-full transform lg:scale-105">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Summer Estate</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Sustained perfection through the heat.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-5xl font-black text-accent">$599</span>
+                        <span class="text-secondary-text ml-1">/season</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-sun text-accent mr-3"></i> Heat-Resistant Fertility</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-sun text-accent mr-3"></i> Intensive Weed Control</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-sun text-accent mr-3"></i> Smart Irrigation Management</li>
+                    <li class="flex items-center text-sm text-secondary-text font-semibold"><i class="fas fa-sun text-accent mr-3"></i> Weekly Maintenance Set</li>
                 </ul>
-                <button class="w-full py-4 px-6 rounded-xl bg-white text-[#2E7D32] font-black shadow-lg hover:shadow-xl transition-all transform hover:scale-105">Choose Plan</button>
+                <button class="w-full py-4 mt-auto rounded-xl bg-gradient-to-br from-[#2E7D32] to-[#4E342E] text-white font-bold shadow-xl hover:brightness-110 active:scale-95 transition-all">Select Plan</button>
             </div>
 
-            <!-- Premium -->
-            <div class="bg-background p-8 rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center">
-                <div class="w-14 h-14 rounded-2xl bg-[#4E342E]/10 flex items-center justify-center mb-4 text-[#4E342E]"><i class="fas fa-crown text-2xl"></i></div>
-                <h3 class="text-xl font-bold text-accent-light mb-2">Premium</h3>
-                <div class="text-4xl font-black text-accent mb-1">$249<span class="text-base font-normal text-secondary-text opacity-50">/mo</span></div>
-                <p class="text-xs text-secondary-text opacity-40 mb-6">Billed monthly</p>
-                <ul class="space-y-3 mb-8 w-full text-secondary-text">
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Priority Weekly Mowing</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Hedge & Bush Trimming</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Weed Control & Feed</li>
-                    <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-accent text-xs flex-shrink-0"></i>Irrigation Check</li>
+            <!-- Fall Plan -->
+            <div class="group bg-background p-8 rounded-2xl border border-border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="mb-8">
+                    <h3 class="font-serif text-2xl font-bold text-primary-text mb-2">Fall Winterization</h3>
+                    <p class="text-sm text-secondary-text opacity-70 mb-6">Restoring order and freezing prep.</p>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-black text-accent">$449</span>
+                        <span class="text-secondary-text ml-1">/season</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-10 flex-grow">
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-snowflake text-accent mr-3"></i> Complete Leaf Removal</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-snowflake text-accent mr-3"></i> Perennial Cutbacks</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-snowflake text-accent mr-3"></i> System Winterizing</li>
+                    <li class="flex items-center text-sm text-secondary-text"><i class="fas fa-snowflake text-accent mr-3"></i> Protective Mulching</li>
                 </ul>
-                <button class="w-full py-3 px-6 rounded-xl border-2 border-[#2E7D32] text-accent font-bold hover:bg-[#2E7D32] hover:text-white transition-all">Get Started</button>
+                <button class="w-full py-4 mt-auto rounded-xl border-2 border-accent text-accent font-bold hover:bg-accent hover:text-whidte transition-all">Select Plan</button>
             </div>
         </div>
     </div>
@@ -635,6 +719,49 @@ Transforming gardens and lawns into stunning outdoor spaces with reliable mainte
             }));
             html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
         });
+        document.addEventListener("DOMContentLoaded", function () {
+
+    const btnMonthly = document.getElementById("btn-monthly");
+    const btnSeasonal = document.getElementById("btn-seasonal");
+
+    const monthlyPlans = document.getElementById("monthly-plans");
+    const seasonalPlans = document.getElementById("seasonal-plans");
+
+    if (!btnMonthly || !btnSeasonal || !monthlyPlans || !seasonalPlans) return;
+
+    btnMonthly.addEventListener("click", function () {
+
+        btnMonthly.classList.add("bg-[#2E7D32]", "text-white", "shadow-lg");
+        btnMonthly.classList.remove("text-primary-text");
+
+        btnSeasonal.classList.remove("bg-[#2E7D32]", "text-white", "shadow-lg");
+        btnSeasonal.classList.add("text-primary-text");
+
+        monthlyPlans.classList.remove("hidden");
+        monthlyPlans.classList.add("grid");
+
+        seasonalPlans.classList.remove("grid");
+        seasonalPlans.classList.add("hidden");
+
+    });
+
+    btnSeasonal.addEventListener("click", function () {
+
+        btnSeasonal.classList.add("bg-[#2E7D32]", "text-white", "shadow-lg");
+        btnSeasonal.classList.remove("text-primary-text");
+
+        btnMonthly.classList.remove("bg-[#2E7D32]", "text-white", "shadow-lg");
+        btnMonthly.classList.add("text-primary-text");
+
+        seasonalPlans.classList.remove("hidden");
+        seasonalPlans.classList.add("grid");
+
+        monthlyPlans.classList.remove("grid");
+        monthlyPlans.classList.add("hidden");
+
+    });
+
+});
     </script>
 </body>
 </html>

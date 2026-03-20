@@ -143,6 +143,7 @@
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+       
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -197,8 +198,7 @@
         </nav>
     </header>
 
-    <main class="flex-grow">
-        <!-- 1️⃣ PAGE HERO / INTRO SECTION -->
+<main class="flex-grow overflow-x-hidden">        <!-- 1️⃣ PAGE HERO / INTRO SECTION -->
 <section class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
@@ -377,9 +377,7 @@
                 </div>
             </div>
             <!-- Decorative blur shapes -->
-            <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-64 h-64 bg-accent-light/10 rounded-full blur-3xl"></div>
-        </div>
+<div class="absolute top-0 left-[-40px] w-48 h-48 bg-white/5 rounded-full blur-2xl"></div><div class="absolute bottom-0 right-[-40px] w-48 h-48 bg-accent-light/10 rounded-full blur-2xl"></div>        </div>
     </div>
 </section>
         </main>

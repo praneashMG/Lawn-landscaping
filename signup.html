@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,8 @@
 
     <style>
         /* --- Brand Colors --- */
-        :root, html[data-theme='light'] {
+        :root,
+        html[data-theme='light'] {
             --color-background: #FFFFFF;
             --color-surface: #F1F8F1;
             --color-primary-text: #1B261B;
@@ -19,12 +21,13 @@
             --color-border: #E5E7EB;
             --color-input-bg: #FFFFFF;
         }
+
         html[data-theme='dark'] {
             --color-background: #000000;
             --color-surface: #1A261A;
             --color-primary-text: #FFFFFF;
             --color-secondary-text: #D7CCC8;
-            --color-accent: #81C784; 
+            --color-accent: #81C784;
             --color-border: #243624;
             --color-input-bg: #0D140D;
         }
@@ -42,7 +45,9 @@
             padding: 1.5rem;
         }
 
-        .font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+        .font-serif {
+            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
 
         .auth-card {
             background-color: var(--color-surface);
@@ -60,24 +65,48 @@
             background: linear-gradient(135deg, #2E7D32 0%, #4E342E 100%);
             transition: all 0.3s ease;
         }
-        .btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
 
         /* Floating Controls */
         .controls {
-            position: fixed; top: 1.5rem; right: 1.5rem;
-            display: flex; gap: 0.75rem; z-index: 50;
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 50;
         }
-        html[dir="rtl"] .controls { right: auto; left: 1.5rem; }
+
+        html[dir="rtl"] .controls {
+            right: auto;
+            left: 1.5rem;
+        }
+
         .btn-control {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: var(--color-background); border: 1px solid var(--color-border);
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; color: var(--color-primary-text);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--color-primary-text);
             transition: all 0.2s ease;
         }
-        .btn-control:hover { background-color: var(--color-accent); color: white; }
+
+        .btn-control:hover {
+            background-color: var(--color-accent);
+            color: white;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="controls">
@@ -92,111 +121,132 @@
 
     <div class="relative w-full max-w-5xl">
         <div class="auth-card w-full flex flex-col md:flex-row rounded-[2rem] min-h-[540px] overflow-hidden">
-            
+
             <!-- Left Panel: Brand & Image -->
             <div class="hidden md:flex md:w-1/2 relative bg-emerald-950">
-                <img src="/assets/login.jpg" 
-                     class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <img src="/assets/loo.avif" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="relative z-10 p-8 text-white flex flex-col justify-between h-full">
                     <div>
-                        <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight mb-4 block">
+                        <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight mb-8 block">
                             <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
                         </a>
-                        <h2 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-3">Grow Your <br><span class="text-[#81C784]">Dream Landscape</span></h2>
-                        <p class="text-white/80 text-lg font-light leading-relaxed">Join Royal Garden and get a customized maintenance plan for your property.</p>
+                        <h2 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-3">Grow Your <br><span
+                                class="text-[#4E342E]">Dream Landscape</span></h2>
+                        <p class="text-white/80 text-lg font-light leading-relaxed">Join Royal Garden and get a
+                            customized maintenance plan for your property.</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
-                        <p class="text-xs font-bold uppercase tracking-widest text-[#81C784] mb-2">Member Benefit</p>
-                        <p class="text-sm leading-relaxed text-white/90 font-medium">Enjoy 20% off your first seasonal cleanup when you sign up today.</p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-[#4E342E] mb-2">Member Benefit</p>
+                        <p class="text-sm leading-relaxed text-white/90 font-medium">Enjoy 20% off your first seasonal
+                            cleanup when you sign up today.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Right Panel: Form -->
-            <div class="w-full md:w-1/2 flex items-center justify-center p-6 md:p-8 lg:p-10">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
                 <div class="w-full max-w-sm">
-                    
-                    <a href="index.html" class="md:hidden text-3xl font-serif font-extrabold tracking-tight mb-5 text-center block">
+
+                    <a href="index.html" class="md:hidden text-3xl font-serif font-extrabold tracking-tight mb-8 text-center block">
                         <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
                     </a>
 
-                    <div class="mb-3 text-center md:text-left">
-                        <h3 class="text-2xl lg:text-3xl font-serif font-bold mb-1 text-primary-text">Create Account</h3>
-                        <p class="text-secondary-text opacity-70">Start your premium lawn care journey.</p>
+                    <div class="mb-3 text-center">
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-serif font-bold mb-1 text-primary-text">Create
+                            Account</h3>
+                        <p class="text-[10px] sm:text-xs text-secondary-text opacity-70">Start your premium lawn care
+                            journey.</p>
                     </div>
 
-                    <div class="flex justify-center md:justify-start gap-3 mb-3">
-                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
-                            <i class="fab fa-google text-red-500"></i>
+                    <div class="flex justify-center gap-2 sm:gap-3 mb-3">
+                        <button
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-google text-red-500 text-sm sm:text-base"></i>
                         </button>
-                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
-                            <i class="fab fa-apple text-primary-text"></i>
+                        <button
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-apple text-primary-text text-sm sm:text-base"></i>
                         </button>
-                        <button class="w-10 h-10 rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
-                            <i class="fab fa-facebook-f text-blue-600"></i>
+                        <button
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl border border-border flex items-center justify-center hover:bg-white transition shadow-sm input-field">
+                            <i class="fab fa-facebook-f text-blue-600 text-sm sm:text-base"></i>
                         </button>
                     </div>
 
-                    <div class="relative flex items-center gap-4 mb-3">
+                    <div class="relative flex items-center gap-2 sm:gap-4 mb-3">
                         <div class="flex-1 h-px bg-border"></div>
-                        <span class="text-[10px] font-bold uppercase text-secondary-text tracking-widest">OR EMAIL</span>
+                        <span
+                            class="text-[8px] sm:text-[10px] font-bold uppercase text-secondary-text tracking-widest">OR
+                            EMAIL</span>
                         <div class="flex-1 h-px bg-border"></div>
                     </div>
 
-                    <form action="#" class="space-y-2">
-                        <div class="grid grid-cols-2 gap-3">
+                    <form action="#" class="space-y-1.5 sm:space-y-2">
+                        <div class="grid grid-cols-2 gap-2 sm:gap-3">
                             <div>
-                                <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">First Name</label>
-                                <input type="text" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="John">
+                                <label
+                                    class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">First
+                                    Name</label>
+                                <input type="text" required
+                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                    placeholder="John">
                             </div>
                             <div>
-                                <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Last Name</label>
-                                <input type="text" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="Doe">
+                                <label
+                                    class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Last
+                                    Name</label>
+                                <input type="text" required
+                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                    placeholder="Doe">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Email Address</label>
-                            <input type="email" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="name@example.com">
+                            <label
+                                class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Email
+                                Address</label>
+                            <input type="email" required
+                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                placeholder="name@example.com">
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Password</label>
-                            <input type="password" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="••••••••">
+                            <label
+                                class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Password</label>
+                            <input type="password" required
+                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                placeholder="••••••••">
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Confirm Password</label>
-                            <input type="password" required class="input-field w-full px-4 py-2.5 rounded-xl text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all" placeholder="••••••••">
+                            <label
+                                class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Confirm
+                                Password</label>
+                            <input type="password" required
+                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                placeholder="••••••••">
                         </div>
 
-                     <div class="flex items-center gap-2 py-0.5">
-    
-    <input 
-        type="checkbox" 
-        required 
-        id="terms" 
-        class="w-4 h-4 rounded accent-[#2E7D32] shrink-0"
-    >
-
-    <label 
-        for="terms" 
-        class="text-[10px] leading-tight uppercase font-bold opacity-60 cursor-pointer"
-    >
-        I agree to the 
-        <a href="#" class="text-accent hover:underline">Terms of Service</a> 
-        and 
-        <a href="#" class="text-accent hover:underline">Privacy Policy</a>
-    </label>
-
-</div>
-                        <button type="submit" class="btn-primary w-full py-2.5 rounded-xl text-white font-bold text-base shadow-lg mt-0.5">
+                        <div class="flex items-center gap-1.5 sm:gap-2 py-0.5 mt-1 text-left">
+                            <input type="checkbox" required id="terms"
+                                class="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded accent-[#2E7D32] shrink-0">
+                            <label for="terms"
+                                class="text-[8px] sm:text-[10px] leading-tight uppercase font-bold opacity-60 cursor-pointer">
+                                I agree to the
+                                <a href="#" class="text-accent hover:underline">Terms of Service</a>
+                                and
+                                <a href="#" class="text-accent hover:underline">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button type="submit"
+                            class="btn-primary w-full py-2.5 sm:py-2.5 rounded-lg sm:rounded-xl text-white font-bold text-xs sm:text-base shadow-lg mt-1 sm:mt-0.5">
                             Join Royal Garden
                         </button>
                     </form>
 
-                    <p class="text-sm mt-3 text-center md:text-left text-secondary-text">
-                        Already have an account? <a href="login.html" class="text-accent font-bold hover:underline">Sign In</a>
+                    <p class="text-xs sm:text-sm mt-3 text-center text-secondary-text">
+                        Already have an account? <a href="login.html" class="text-accent font-bold hover:underline">Sign
+                            In</a>
                     </p>
                 </div>
             </div>
@@ -232,4 +282,5 @@
         updateIcons();
     </script>
 </body>
+
 </html>

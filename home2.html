@@ -199,19 +199,18 @@
 
     <main class="flex-grow">
         <!-- 1️⃣ SPLIT HERO SECTION -->
-<section class="relative bg-background overflow-hidden lg:min-h-[90vh] flex items-center">
-    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
+<section class="relative bg-background overflow-hidden min-h-auto lg:min-h-[90vh] flex items-center">    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-24 lg:py-0">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Left Side Content -->
             <div class="order-2 lg:order-1 text-center lg:text-left">
                 <span class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase text-accent bg-accent/10 rounded-full">
                     Est. 2012 • Premium Landscaping
                 </span>
-                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-primary-text leading-[1.1] mb-6">
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-7xl font-bold text-primary-text leading-[1.1] mb-6">
                     Beautiful Lawns <br class="hidden lg:block"> Start With <span class="text-accent">Expert Care</span>
                 </h1>
-                <p class="text-lg text-secondary-text opacity-80 mb-10 max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed">
-                    Transform your property with the help of our certified horticulturists and landscape designers. We provide year-round solutions for a lush, healthy outdoor environment.
+<p class="text-lg md:text-[17px] text-secondary-text opacity-80 mb-10 
+max-w-xl md:max-w-2xl mx-auto lg:mx-0 font-sans leading-relaxed">                    Transform your property with the help of our certified horticulturists and landscape designers. We provide year-round solutions for a lush, healthy outdoor environment.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
            <a href="contact.html"
@@ -331,9 +330,12 @@ Schedule Service
                 <p class="text-secondary-text opacity-70 mt-4">A glimpse into our recent luxury landscaping transformations.</p>
             </div>
 <a href="gallery.html" 
-class="px-6 py-3 border border-[#2E7D32] text-[#2E7D32] font-bold rounded-xl hover:bg-[#4E342E] hover:border-[#4E342E] hover:text-white transition-all whitespace-nowrap">
+class="w-full md:w-auto text-center px-6 py-3 border border-[#2E7D32] 
+text-[#2E7D32] font-bold rounded-xl 
+hover:bg-[#4E342E] hover:border-[#4E342E] hover:text-white 
+transition-all">
 View All Projects
-</a>        </div>
+</a>      </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[600px]">
             <!-- Main Featured -->
@@ -383,10 +385,12 @@ View All Projects
                 <p class="text-secondary-text italic mb-8 leading-relaxed">"The best decision we made for our new home. The team's knowledge of local plants saved us thousands in potential mistakes."</p>
                 <div class="flex items-center space-x-4 mt-auto">
                     <img src="https://i.pravatar.cc/150?u=1" alt="Client" class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20">
-                    <div>
-                        <div class="font-bold text-primary-text">Sarah Jenkins</div>
-                        <div class="text-xs text-secondary-text opacity-60">Homeowner, Oak Ridge</div>
-                    </div>
+                   <div class="min-w-0">
+    <div class="font-bold text-primary-text">Sarah Jenkins</div>
+    <div class="text-xs text-secondary-text opacity-60 truncate hidden lg:block">
+            Homeowner, Oak Ridge
+    </div>
+</div>
                 </div>
             </div>
             <!-- Review 2 -->
@@ -399,7 +403,7 @@ View All Projects
                     <img src="https://i.pravatar.cc/150?u=2" alt="Client" class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20">
                     <div>
                         <div class="font-bold text-primary-text">Michael Chen</div>
-                        <div class="text-xs text-secondary-text opacity-60">Estate Manager</div>
+                        <div class="text-xs text-secondary-text opacity-60 hidden lg:block">Estate Manager</div>
                     </div>
                 </div>
             </div>
@@ -413,7 +417,7 @@ View All Projects
                     <img src="https://i.pravatar.cc/150?u=3" alt="Client" class="w-12 h-12 rounded-full object-cover ring-2 ring-accent/20">
                     <div>
                         <div class="font-bold text-primary-text">Robert Miller</div>
-                        <div class="text-xs text-secondary-text opacity-60">Local Business Owner</div>
+                        <div class="text-xs text-secondary-text opacity-60 hidden lg:block">Local Business Owner</div>
                     </div>
                 </div>
             </div>

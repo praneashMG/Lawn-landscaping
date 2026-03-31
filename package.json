@@ -1,0 +1,25 @@
+{
+  "name": "lawn-care",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./style.css -o ./output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praneashMG/Lawn-landscaping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/praneashMG/Lawn-landscaping/issues"
+  },
+  "homepage": "https://github.com/praneashMG/Lawn-landscaping#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

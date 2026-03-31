@@ -33,7 +33,7 @@
             --color-secondary-text: #D7CCC8;
             --color-accent: #81C784;
             --color-accent-light: #BCAAA4;
-            --color-border: #243624;
+            --color-border: #374151;
             --color-hover: #1A261A;
             --color-footer-bg: #000000;
             --color-footer-text: #FFFFFF;
@@ -184,21 +184,42 @@
             }
         }
 
-        .book-btn {
-            background-color: #2E7D32;
+        /* ── Canonical Button System ── */
+        .btn-primary, .book-btn {
+            background: linear-gradient(135deg, #2E7D32 0%, #4E342E 100%);
             color: white;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
-
-        html[data-theme='dark'] .book-btn {
-            background-color: #4E342E;
-            border: 1px solid #2E7D32;
+        .btn-primary:hover, .book-btn:hover {
+            opacity: 0.88;
+            transform: scale(1.04);
+            box-shadow: 0 6px 18px rgba(46,125,50,0.3);
         }
-
-        .book-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.25);
+        }
+        html[data-theme='dark'] .btn-outline { color: #81C784; border-color: #81C784; }
+        html[data-theme='dark'] .btn-outline:hover { background: #81C784; color: #000; }
+        .btn-cta-white {
+            background: white;
+            color: #2E7D32;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-cta-white:hover {
+            background: #f3f4f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -209,7 +230,7 @@
         id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
             <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight">
-                <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                <span style="color: #2E7D32;">Royal</span><span style="color: #2E7D32;"> Garden</span>
             </a>
 
             <div class="hidden xl:flex items-center space-x-6">
@@ -234,6 +255,16 @@
                     <a href="projects.html" class="nav-link">Projects</a>
                     <a href="pricing.html" class="nav-link">Pricing</a>
                     <a href="contact.html" class="nav-link text-accent font-bold">Contact</a>
+                     <div class="dropdown-wrapper">
+                        <button class="nav-link flex items-center">
+                            Dashboard
+                            <svg class="w-3 h-3 ml-1 relative top-[2.5px] transition-transform duration-200 text-primary-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="admin.html">Admin Dashboard</a>
+                            <a href="userdash.html">User Dashboard</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="w-px h-6 bg-border mx-3"></div>
@@ -254,10 +285,9 @@
                     </button>
                     <button id="lang-icon"
                         class="text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0c2.5 2.8 2.5 12.2 0 15m0-15c-2.5 2.8-2.5 12.2 0 15M3 12h18" />
-                        </svg>
+                       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+</svg>   
                     </button>
                     <div class="flex items-center gap-3 ml-3">
                         <a href="login.html" class="book-btn px-6 py-2.5 rounded-xl font-bold shadow-md">Login</a>
@@ -302,48 +332,52 @@
             <div class="container mx-auto max-w-7xl px-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Phone -->
-                    <div
-                        class="group bg-background p-8 rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-                        <div
-                            class="w-14 h-14 bg-[#2E7D32]/10 rounded-full flex items-center justify-center text-[#2e7d32] mb-6 group-hover:bg-[#4e342e] group-hover:text-white transition-colors">
-                            <i class="fas fa-phone-alt text-xl"></i>
+                    <div class="group bg-background rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col text-center overflow-hidden">
+                        <div class="h-32 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80&auto=format&fit=crop" alt="Phone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Phone Number</h3>
-                        <p class="text-secondary-text opacity-70">(555) 123-4567</p>
-                        <p class="text-secondary-text opacity-70">(555) 987-6543</p>
+                        <div class="p-6">
+                            <div class="w-8 h-1 bg-[#2E7D32] rounded mx-auto mb-3"></div>
+                            <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Phone Number</h3>
+                            <p class="text-secondary-text opacity-70">(555) 123-4567</p>
+                            <p class="text-secondary-text opacity-70">(555) 987-6543</p>
+                        </div>
                     </div>
                     <!-- Email -->
-                    <div
-                        class="group bg-background p-8 rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-                        <div
-                            class="w-14 h-14 bg-[#2E7D32]/10 rounded-full flex items-center justify-center text-[#2e7d32] mb-6 group-hover:bg-[#4e342e] group-hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
+                    <div class="group bg-background rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col text-center overflow-hidden">
+                        <div class="h-32 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&q=80&auto=format&fit=crop" alt="Email" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Email Address</h3>
-                        <p class="text-secondary-text opacity-70">info@royalgarden.com</p>
-                        <p class="text-secondary-text opacity-70">support@royalgarden.com</p>
+                        <div class="p-6">
+                            <div class="w-8 h-1 bg-[#2E7D32] rounded mx-auto mb-3"></div>
+                            <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Email Address</h3>
+                            <p class="text-secondary-text opacity-70">info@royalgarden.com</p>
+                            <p class="text-secondary-text opacity-70">support@royalgarden.com</p>
+                        </div>
                     </div>
                     <!-- Location -->
-                    <div
-                        class="group bg-background p-8 rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-                        <div
-                            class="w-14 h-14 bg-[#2E7D32]/10 rounded-full flex items-center justify-center text-[#2e7d32] mb-6 group-hover:bg-[#4e342e] group-hover:text-white transition-colors">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
+                    <div class="group bg-background rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col text-center overflow-hidden">
+                        <div class="h-32 overflow-hidden">
+                            <img src="https://stonetrade.ru/upload/medialibrary/258/fgkka5i2pjv5uxt3xd2um64sn5w2novy/a1ea87d4a3b78f8a4c3794dd199d10e6.jpg" alt="Location" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Office Location</h3>
-                        <p class="text-secondary-text opacity-70">123 Green Valley Road</p>
-                        <p class="text-secondary-text opacity-70">Garden City, NY 11530</p>
+                        <div class="p-6">
+                            <div class="w-8 h-1 bg-[#2E7D32] rounded mx-auto mb-3"></div>
+                            <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Office Location</h3>
+                            <p class="text-secondary-text opacity-70">123 Green Valley Road</p>
+                            <p class="text-secondary-text opacity-70">Garden City, NY 11530</p>
+                        </div>
                     </div>
                     <!-- Hours -->
-                    <div
-                        class="group bg-background p-8 rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-                        <div
-                            class="w-14 h-14 bg-[#2E7D32]/10 rounded-full flex items-center justify-center text-[#2e7d32] mb-6 group-hover:bg-[#4e342e] group-hover:text-white transition-colors">
-                            <i class="fas fa-clock text-xl"></i>
+                    <div class="group bg-background rounded-xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col text-center overflow-hidden">
+                        <div class="h-32 overflow-hidden">
+                            <img src="https://avatars.mds.yandex.net/i?id=d9150ed417f70c3242f794616eb2e8a8b0208457-13095363-images-thumbs&n=13" alt="Working Hours" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
-                        <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Working Hours</h3>
-                        <p class="text-secondary-text opacity-70">Mon - Fri: 8am - 6pm</p>
-                        <p class="text-secondary-text opacity-70">Sat: 9am - 3pm</p>
+                        <div class="p-6">
+                            <div class="w-8 h-1 bg-[#2E7D32] rounded mx-auto mb-3"></div>
+                            <h3 class="font-serif text-lg font-bold text-primary-text mb-2">Working Hours</h3>
+                            <p class="text-secondary-text opacity-70">Mon - Fri: 8am - 6pm</p>
+                            <p class="text-secondary-text opacity-70">Sat: 9am - 3pm</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -553,7 +587,7 @@
 
                             <!-- Submit -->
                             <button type="submit" id="cf-submit-btn"
-                                class="w-full py-4 rounded-xl font-bold text-white text-base bg-gradient-to-r from-[#2E7D32] to-[#4E342E] hover:brightness-110 active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-3 group">
+                                class="btn-primary w-full py-4 rounded-xl font-bold text-base shadow-lg flex items-center justify-center gap-3 group">
                                 <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
                                 Send My Request
                             </button>
@@ -611,7 +645,7 @@ For urgent requests or storm damage cleanup, please call us directly.
 </p>
                     </div>
                     <a href="tel:5551234567"
-                        class="inline-flex items-center space-x-3 px-10 py-4 border-2 border-[#4E342E] text-[#4E342E] font-bold rounded-xl hover:bg-[#4E342E] hover:text-white transition-all transform active:scale-95 group shadow-sm">
+                        class="btn-outline inline-flex items-center space-x-3 px-10 py-4 rounded-xl group active:scale-95 shadow-sm">
                         <i class="fas fa-phone-volume group-hover:rotate-12 transition-transform"></i>
                         <span>Call Now: (555) 123-4567</span>
                     </a>
@@ -632,8 +666,7 @@ For urgent requests or storm damage cleanup, please call us directly.
                             expertise to your door. Request your free estimate today.
                         </p>
                         <div class="flex justify-center">
-                            <a href="#"
-                                class="px-12 py-5 bg-white text-[#2E7D32] font-bold rounded-2xl shadow-xl hover:bg-gray-100 active:scale-95 transition-all text-xl">
+                            <a href="#" class="btn-cta-white px-12 py-5 rounded-2xl shadow-xl active:scale-95 text-xl font-bold">
                                 Get Free Quote
                             </a>
                         </div>
@@ -653,7 +686,7 @@ For urgent requests or storm damage cleanup, please call us directly.
             class="absolute top-0 left-0 right-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
             <div class="flex justify-between items-center pb-4 border-b border-border">
                 <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
-                    <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                    <span style="color: #2E7D32;">Royal</span><span style="color: #2E7D32;"> Garden</span>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent"><svg class="w-6 h-6"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -685,6 +718,20 @@ For urgent requests or storm damage cleanup, please call us directly.
                 <a href="projects.html" class="block text-primary-text font-semibold text-lg py-2">Projects</a>
                 <a href="pricing.html" class="block text-primary-text font-semibold text-lg py-2">Pricing</a>
                 <a href="contact.html" class="block text-accent font-bold text-lg py-2">Contact</a>
+                <!-- Dashboard Dropdown -->
+<div>
+    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
+        Dashboard 
+        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+
+    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-1 mt-1 border-l-2 border-border">
+        <a href="admin.html" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
+        <a href="userdash.html" class="block text-secondary-text hover:text-accent text-base py-1">User Dashboard</a>
+    </div>
+</div>
             </nav>
             <div class="pt-4 border-t border-border mt-4 flex justify-around items-center">
                 <button id="mobile-lang-icon-drawer" class="flex flex-col items-center"><svg class="w-6 h-6" fill="none"
@@ -693,10 +740,9 @@ For urgent requests or storm damage cleanup, please call us directly.
                             d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0c2.5 2.8 2.5 12.2 0 15m0-15c-2.5 2.8-2.5 12.2 0 15M3 12h18" />
                     </svg><span class="text-xs mt-1 text-secondary-text">RTL</span></button>
                 <button id="drawer-theme-toggle" class="flex flex-col items-center">
-                    <svg class="w-6 h-6 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
+                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+</svg>
                     <svg class="w-6 h-6 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -717,7 +763,7 @@ For urgent requests or storm damage cleanup, please call us directly.
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
                 <div class="lg:col-span-2">
-                    <h1 class="text-3xl font-serif font-black" style="color:#2E7D32">Royal<span style="color:#4E342E">
+                    <h1 class="text-3xl font-serif font-black" style="color:#2E7D32">Royal<span style="color:#2E7D32">
                             Garden</span></h1>
                     <p class="text-lg leading-relaxed max-w-sm !text-gray-400">
                         Transforming gardens and lawns into stunning outdoor spaces with reliable maintenance, creative
@@ -755,8 +801,7 @@ For urgent requests or storm damage cleanup, please call us directly.
                     <div class="flex flex-col space-y-4">
                         <input type="email" placeholder="Email address"
                             class="p-4 text-sm rounded-xl bg-gray-900 border border-gray-800 focus:outline-none text-white" />
-                        <button
-                            class="bg-custom-gradient text-white font-bold py-3 rounded-xl hover:opacity-90 transition-all">Subscribe</button>
+                        <button class="btn-primary text-white font-bold py-3 rounded-xl">Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -800,6 +845,7 @@ For urgent requests or storm damage cleanup, please call us directly.
                 });
             };
             setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
+            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
 
             // Theme & RTL
             const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];

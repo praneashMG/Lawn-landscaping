@@ -26,7 +26,7 @@
             --color-secondary-text: #D7CCC8;
             --color-accent: #81C784; 
             --color-accent-light: #BCAAA4; 
-            --color-border: #243624; 
+            --color-border: #374151; 
             --color-hover: #1A261A;
             --color-footer-bg: #000000;
             --color-footer-text: #FFFFFF;
@@ -97,19 +97,42 @@
             .dropdown-wrapper:hover .dropdown-menu { display: block; }
         }
 
-        .book-btn {
-            background-color: #2E7D32;
+        /* ── Canonical Button System ── */
+        .btn-primary, .book-btn {
+            background: linear-gradient(135deg, #2E7D32 0%, #4E342E 100%);
             color: white;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
-        html[data-theme='dark'] .book-btn {
-            background-color: #4E342E;
-            border: 1px solid #2E7D32;
+        .btn-primary:hover, .book-btn:hover {
+            opacity: 0.88;
+            transform: scale(1.04);
+            box-shadow: 0 6px 18px rgba(46,125,50,0.3);
         }
-        .book-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.25);
+        }
+        html[data-theme='dark'] .btn-outline { color: #81C784; border-color: #81C784; }
+        html[data-theme='dark'] .btn-outline:hover { background: #81C784; color: #000; }
+        .btn-cta-white {
+            background: white;
+            color: #2E7D32;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-cta-white:hover {
+            background: #f3f4f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         }
 
         /* detail overlay */
@@ -151,7 +174,7 @@
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-xl border-b border-border bg-background" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
             <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight">    
-                <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                <span style="color: #2E7D32;">Royal</span><span style="color: #2E7D32;"> Garden</span>
             </a>
             <div class="hidden xl:flex items-center space-x-6">
                 <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium">
@@ -178,8 +201,9 @@
                         <svg class="w-6 h-6 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </button>
                     <button id="lang-icon" class="text-primary-text hover:text-accent p-1.5 rounded-full">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 0c2.5 2.8 2.5 12.2 0 15m0-15c-2.5 2.8-2.5 12.2 0 15M3 12h18" /></svg>
-                    </button>
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+</svg>                    </button>
                     <div class="flex items-center gap-3 ml-3">
                         <a href="login.html" class="book-btn px-6 py-2.5 rounded-xl font-bold shadow-md">Login</a>
                         <a href="signup.html" class="book-btn px-6 py-2.5 rounded-xl font-bold shadow-md">Sign Up</a>
@@ -230,7 +254,7 @@
                         <div class="flex items-center space-x-2 text-[#81C784] mb-4"><span class="w-8 h-px bg-[#81C784]"></span><span class="text-sm font-bold uppercase tracking-widest">Featured Transformation</span></div>
                         <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">The Sterling Estate Gardens <span class="text-lg font-sans font-normal opacity-70 ml-2">| Greenwich, CT</span></h2>
                         <p class="text-white/80 text-lg mb-8 max-w-2xl">A comprehensive restoration of a 5‑acre property featuring architectural hardscapes, native floral integration, and a custom irrigation system.</p>
-                        <a href="#" class="inline-flex items-center px-8 py-4 bg-white text-[#2E7D32] font-bold rounded-xl shadow-lg hover:bg-[#2E7D32] hover:text-white transition-all transform active:scale-95 read-case-btn" data-project="sterling">View Details <i class="fas fa-arrow-right ml-3"></i></a>
+                        <a href="#" class="btn-primary inline-flex items-center px-8 py-4 rounded-xl shadow-lg active:scale-95 read-case-btn" data-project="sterling">View Details <i class="fas fa-arrow-right ml-3"></i></a>
                     </div>
                 </div>
             </div>
@@ -361,7 +385,7 @@
         <section class="py-20 bg-background">
             <div class="container mx-auto max-w-7xl px-4">
                 <div class="bg-gradient-to-br from-[#2E7D32] to-[#4E342E] rounded-[2.5rem] p-10 md:p-20 text-center shadow-2xl relative overflow-hidden text-white">
-                    <div class="relative z-10 max-w-4xl mx-auto"><h2 class="font-serif text-3xl md:text-5xl font-bold mb-8">Ready to Start Your Lawn Project?</h2><p class="text-white/80 text-lg mb-12">Whether you're planning a complete renovation or need professional maintenance, our experts are here to help your garden reach its full potential.</p><a href="contact.html" class="px-12 py-5 bg-white text-[#2E7D32] font-bold rounded-2xl shadow-xl hover:bg-gray-100 transition text-xl">Get Free Consultation</a></div>
+                    <div class="relative z-10 max-w-4xl mx-auto"><h2 class="font-serif text-3xl md:text-5xl font-bold mb-8">Ready to Start Your Lawn Project?</h2><p class="text-white/80 text-lg mb-12">Whether you're planning a complete renovation or need professional maintenance, our experts are here to help your garden reach its full potential.</p><a href="contact.html" class="btn-cta-white px-12 py-5 rounded-2xl shadow-xl text-xl font-bold">Get Free Consultation</a></div>
                     <div class="absolute -top-10 -left-10 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div><div class="absolute -bottom-10 -right-10 w-80 h-80 bg-accent-light/10 rounded-full blur-3xl"></div>
                 </div>
             </div>
@@ -380,7 +404,7 @@
     <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300"><!-- same content as original, omitted for brevity but keep exactly --> 
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 left-0 right-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300">
-            <div class="flex justify-between items-center pb-4 border-b border-border"><a href="index.html" class="text-2xl font-serif font-extrabold"><span style="color:#2E7D32">Royal</span><span style="color:#4E342E"> Garden</span></a><button id="mobile-menu-close"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+            <div class="flex justify-between items-center pb-4 border-b border-border"><a href="index.html" class="text-2xl font-serif font-extrabold"><span style="color:#2E7D32">Royal</span><span style="color:#2E7D32"> Garden</span></a><button id="mobile-menu-close"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
             <nav class="flex flex-col space-y-2 py-4"><!-- home toggle etc --> 
                 <div><button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-homes-toggle">Home <svg class="w-4 h-4 transform transition-transform duration-200 text-primary-text" id="homes-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div id="mobile-homes-menu" class="hidden pl-4 flex flex-col space-y-1 mt-1 border-l-2 border-border"><a href="index.html" class="block text-accent text-base py-1">Boat Rental</a><a href="home2.html" class="block text-secondary-text hover:text-accent text-base py-1">Yacht Charter Service</a></div></div>
                 <a href="about.html" class="block text-primary-text font-semibold text-lg py-2">About</a><a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a><a href="gallery.html" class="block text-primary-text font-semibold text-lg py-2">Gallery</a><a href="projects.html" class="block text-accent font-bold text-lg py-2">Projects</a><a href="pricing.html" class="block text-primary-text font-semibold text-lg py-2">Pricing</a><a href="contact.html" class="block text-primary-text font-semibold text-lg py-2">Contact</a>
@@ -396,10 +420,10 @@
     <!-- footer (identical) -->
     <footer id="main-footer" class="pt-20"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><!-- same --> 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
-            <div class="lg:col-span-2"><h1 class="text-3xl font-serif font-black" style="color:#2E7D32">Royal<span style="color:#4E342E"> Garden</span></h1><p class="text-lg leading-relaxed max-w-sm !text-gray-400">Transforming gardens and lawns into stunning outdoor spaces with reliable maintenance, creative landscaping, and seasonal care services.</p><div class="flex space-x-6 mt-10"><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-facebook-f"></i></a><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-instagram"></i></a><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-whatsapp"></i></a></div></div>
+            <div class="lg:col-span-2"><h1 class="text-3xl font-serif font-black" style="color:#2E7D32">Royal<span style="color:#2E7D32"> Garden</span></h1><p class="text-lg leading-relaxed max-w-sm !text-gray-400">Transforming gardens and lawns into stunning outdoor spaces with reliable maintenance, creative landscaping, and seasonal care services.</p><div class="flex space-x-6 mt-10"><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-facebook-f"></i></a><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-instagram"></i></a><a href="#" class="text-white hover:text-accent text-xl"><i class="fab fa-whatsapp"></i></a></div></div>
             <div><h4 class="footer-heading font-bold text-xl mb-6">Garden Services</h4><ul class="space-y-4"><li><a href="#" class="footer-link">Lawn Mowing</a></li><li><a href="#" class="footer-link">Garden Landscaping</a></li><li><a href="#" class="footer-link">Tree & Shrub Trimming</a></li><li><a href="#" class="footer-link">Seasonal Yard Cleanup</a></li></ul></div>
             <div><h4 class="footer-heading font-bold text-xl mb-6">Quick Links</h4><ul class="space-y-4"><li><a href="booking.html" class="footer-link">Book Now</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
-            <div><h4 class="footer-heading font-bold text-xl mb-6">Newsletter</h4><div class="flex flex-col space-y-4"><input type="email" placeholder="Email address" class="p-4 text-sm rounded-xl bg-gray-900 border border-gray-800 focus:outline-none text-white"><button class="bg-custom-gradient text-white font-bold py-3 rounded-xl hover:opacity-90">Subscribe</button></div></div>
+            <div><h4 class="footer-heading font-bold text-xl mb-6">Newsletter</h4><div class="flex flex-col space-y-4"><input type="email" placeholder="Email address" class="p-4 text-sm rounded-xl bg-gray-900 border border-gray-800 focus:outline-none text-white"><button class="btn-primary text-white font-bold py-3 rounded-xl">Subscribe</button></div></div>
         </div>
         <div class="py-10 text-center text-gray-500 text-sm">© 2026 Royal Gardens. All rights reserved.</div>
     </div></footer>

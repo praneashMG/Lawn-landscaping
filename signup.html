@@ -28,7 +28,7 @@
             --color-primary-text: #FFFFFF;
             --color-secondary-text: #D7CCC8;
             --color-accent: #81C784;
-            --color-border: #243624;
+            --color-border: #374151;
             --color-input-bg: #0D140D;
         }
 
@@ -61,14 +61,17 @@
             color: var(--color-primary-text);
         }
 
+        /* ── Canonical Button System ── */
         .btn-primary {
             background: linear-gradient(135deg, #2E7D32 0%, #4E342E 100%);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            opacity: 0.88;
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(46,125,50,0.3);
         }
 
         /* Floating Controls */
@@ -124,11 +127,11 @@
 
             <!-- Left Panel: Brand & Image -->
             <div class="hidden md:flex md:w-1/2 relative bg-emerald-950">
-                <img src="/assets/loo.avif" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <img src="https://landezine.com/wp-content/uploads/2015/09/Quilapilun_Botanic_Garden_Park-Panorama_Architects-13-SW.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60">
                 <div class="relative z-10 p-8 text-white flex flex-col justify-between h-full">
                     <div>
                         <a href="index.html" class="text-3xl font-serif font-extrabold tracking-tight mb-8 block">
-                            <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                            <span style="color: #2E7D32;">Royal</span><span style="color: #2E7D32;"> Garden</span>
                         </a>
                         <h2 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-3">Grow Your <br><span
                                 class="text-[#4E342E]">Dream Landscape</span></h2>
@@ -136,7 +139,7 @@
                             customized maintenance plan for your property.</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20">
-                        <p class="text-xs font-bold uppercase tracking-widest text-[#4E342E] mb-2">Member Benefit</p>
+                        <p class="text-xs font-bold uppercase tracking-widest text-white mb-2">Member Benefit</p>
                         <p class="text-sm leading-relaxed text-white/90 font-medium">Enjoy 20% off your first seasonal
                             cleanup when you sign up today.</p>
                     </div>
@@ -148,7 +151,7 @@
                 <div class="w-full max-w-sm">
 
                     <a href="index.html" class="md:hidden text-3xl font-serif font-extrabold tracking-tight mb-8 text-center block">
-                        <span style="color: #2E7D32;">Royal</span><span style="color: #4E342E;"> Garden</span>
+                        <span style="color: #2E7D32;">Royal</span><span style="color: #2E7D32;"> Garden</span>
                     </a>
 
                     <div class="mb-3 text-center">
@@ -182,23 +185,21 @@
                     </div>
 
                     <form action="#" class="space-y-1.5 sm:space-y-2">
-                        <div class="grid grid-cols-2 gap-2 sm:gap-3">
-                            <div>
-                                <label
-                                    class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">First
-                                    Name</label>
-                                <input type="text" required
-                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
-                                    placeholder="John">
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Last
-                                    Name</label>
-                                <input type="text" required
-                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
-                                    placeholder="Doe">
-                            </div>
+                        <div>
+                            <label
+                                class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">First
+                                Name</label>
+                            <input type="text" required
+                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                placeholder="John">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Last
+                                Name</label>
+                            <input type="text" required
+                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
+                                placeholder="Doe">
                         </div>
 
                         <div>
@@ -213,18 +214,28 @@
                         <div>
                             <label
                                 class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Password</label>
-                            <input type="password" required
-                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
-                                placeholder="••••••••">
+                            <div class="relative">
+                                <input type="password" required id="signup-password"
+                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all pr-10 rtl:pr-3 rtl:pl-10"
+                                    placeholder="••••••••">
+                                <button type="button" onclick="togglePasswordVisibility('signup-password')" tabindex="-1" class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 px-3 flex items-center text-secondary-text opacity-70 hover:opacity-100 transition-opacity">
+                                    <i class="far fa-eye" id="signup-password-icon"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <div>
                             <label
                                 class="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1 text-secondary-text">Confirm
                                 Password</label>
-                            <input type="password" required
-                                class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all"
-                                placeholder="••••••••">
+                            <div class="relative">
+                                <input type="password" required id="signup-confirm-password"
+                                    class="input-field w-full px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-[#2E7D32] transition-all pr-10 rtl:pr-3 rtl:pl-10"
+                                    placeholder="••••••••">
+                                <button type="button" onclick="togglePasswordVisibility('signup-confirm-password')" tabindex="-1" class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 px-3 flex items-center text-secondary-text opacity-70 hover:opacity-100 transition-opacity">
+                                    <i class="far fa-eye" id="signup-confirm-password-icon"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="flex items-center gap-1.5 sm:gap-2 py-0.5 mt-1 text-left">
@@ -275,6 +286,21 @@
             const theme = document.documentElement.getAttribute('data-theme');
             document.querySelectorAll('.light-icon').forEach(el => el.classList.toggle('hidden', theme !== 'dark'));
             document.querySelectorAll('.dark-icon').forEach(el => el.classList.toggle('hidden', theme !== 'light'));
+        }
+
+        // Password Visibility Toggle
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(inputId + '-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
         }
 
         document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
